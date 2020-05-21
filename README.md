@@ -12,9 +12,9 @@ compatibility library such as [android-retrofuture](https://github.com/retrostre
 
 ## Creating API Keys
 
-Before starting with the SDK, you will need to create an API key online at 
-[secure.epicpay.com][1]. For up-to-date documentation
-on this process, please refer to [our online documentation][2].
+Before starting with the SDK, you will need to create an API key online using the [EpicPay
+Gateway Virtual Terminal][1]. For up-to-date documentation on this process, please refer to
+[our online documentation][2].
 
 [1]: https://secure.epicpay.com
 [2]: https://developer.epicpay.com/Docs/PaymentAPI#Api_Intro
@@ -66,8 +66,8 @@ The EpicGateway object you instantiate will be the basis for all of the SDK's
 communication with the EpicPay API.
 
 From here, the SDK will handle HTTP communication and authentication with the API.
-For detailed information on all of the operations you can perform, check
-https://developer.epicpay.com/Docs/PaymentAPI#Api_Intro.
+For detailed information on all of the operations you can perform, check the
+[API Documentation][2].
 
 ## Usage
 
