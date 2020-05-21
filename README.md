@@ -28,11 +28,11 @@ with a simple `mvn install`. After that, you should be able to just add it to yo
 own project's `pom.xml` and begin using it right away:
 ```xml
 <dependencies>
-<!-- Other dependencies go here...-->
+<!-- Other dependencies go here... -->
 <dependency>
-    <groupId>com.epicpay.epic_gateway_sdk</groupId>
-    <artifactId>epic_gateway_sdk</artifactId>
-    <version><!--version number in EpicPaySDK's pom.xml--></version>
+  <groupId>com.epicpay.epic_gateway_sdk</groupId>
+  <artifactId>epic_gateway_sdk</artifactId>
+  <version><!-- Version number in EpicPaySDK's pom.xml --></version>
 </dependency>
 </dependencies>
 ```
@@ -54,11 +54,11 @@ sandbox or the live production environment.
 ```java
 import com.epicpay.epic_gateway_sdk.EpicGateway;
 // ...
-    EpicGateway gateway;
-    void initEpicSdk() {
-        // Caution: In production applications, credentials should not be exposed in code.
-        gateway = new EpicGateway("apikey", "apikeypasswd", "https://sandbox-api.epicpay.com/payment/v1/");
-    }
+  EpicGateway gateway;
+  void initEpicSdk() {
+    // Caution: In production applications, credentials should not be exposed in code.
+    gateway = new EpicGateway("myApiKey", "myApiKeyPassword", "https://sandbox-api.epicpay.com/payment/v1/");
+  }
 // ...
 ```
 
@@ -94,17 +94,17 @@ on which parameters are required, as many parameters are conditionally required.
 
 `Request` objects and their likely children all have fluent setters for your 
 convenience. For instance, you may create a SaleRequest object and set its parameters
-like so:
+as shown in this example:
 ```java
-new SaleRequest()
-.method("credit_card")
-.creditCard(new CreditCard()
-    .cardNumber(cardNum)
-    .cardHolderName("Joe T. Holder")
-    .expMonth("01")
-    .expYear("2020")
-    .cvv(cardCvv))
-// etc...
+new SaleRequest().method("credit_card").creditCard(
+  new CreditCard()
+  .cardNumber(cardNum)
+  .cardHolderName("Joe T. Holder")
+  .expMonth("01")
+  .expYear("2020")
+  .cvv(cardCvv)
+)
+// Etc...
 ```
 Parameters are public members, and can be set manually as well if you wish.
 
