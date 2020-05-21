@@ -5,7 +5,7 @@
 The EpicPay Java SDK is built as a quick-and-easy way for your Java project to
 begin interacting with the EpicPay Payments API. 
 
-The SDK was built to target Java 8, and needs support for `Lambda`s and `CompletableFuture`s.
+The SDK was built to target Java 8, and needs support for `Lambda` and `CompletableFuture`.
 If you need support for a version of Java without CompletableFutures such as
 Android versions before SDK 24, you will need to recompile the SDK against a
 compatibility library such as [android-retrofuture](https://github.com/retrostreams/android-retrofuture).
