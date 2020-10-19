@@ -32,7 +32,7 @@ public class SdkTest
     public void init() {
         rng = new Random();
         gson = new GsonBuilder().setPrettyPrinting().create();
-        gw = new EpicGateway("0f4a4aebf4394f24a5b15b14b7cd3bae", "VMXGWwLqZmH32s17UIQTyJXLm4SvH4EE", "http://localhost:61064/");
+        gw = new EpicGateway("ApiKeyId", "ApiKeyPasswd", "http://localhost:61064/");
     }
     //#region tests
     @Test
