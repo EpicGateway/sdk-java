@@ -106,7 +106,7 @@ public class EpicGateway {
     public CompletableFuture<MultiUseTokenResponse> registerToken(MultiUseTokenRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<MultiUseTokenResponse> resp = 
-            http.postAsyncHttpBasicAuth("RegisterToken", jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("registertoken", jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, MultiUseTokenResponse.class);}
             );
         return resp;
@@ -119,7 +119,7 @@ public class EpicGateway {
     public CompletableFuture<JwtTokenResponse> requestJwt(JwtTokenRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<JwtTokenResponse> resp = 
-            http.postAsyncHttpBasicAuth("RequestJWT", jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("requestjwt", jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, JwtTokenResponse.class);}
             );
         return resp;
@@ -132,7 +132,7 @@ public class EpicGateway {
     public CompletableFuture<WalletResponse> addWalletItem(AddWalletRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<WalletResponse> resp = 
-            http.postAsyncHttpBasicAuth("AddWalletItem", jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("addwalletitem", jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, WalletResponse.class);}
             );
         return resp;
@@ -146,7 +146,7 @@ public class EpicGateway {
     public CompletableFuture<WalletResponse> editWalletItem(EditWalletRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<WalletResponse> resp = 
-            http.postAsyncHttpBasicAuth("EditWalletItem/" + req.walletId, jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("editwalletitem/" + req.walletId, jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, WalletResponse.class);}
             );
         return resp;
@@ -159,7 +159,7 @@ public class EpicGateway {
     public CompletableFuture<WalletResponse> deleteWalletItem(DeleteWalletRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<WalletResponse> resp = 
-            http.postAsyncHttpBasicAuth("DeleteWalletItem/" + req.walletId, jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("deletewalletitem/" + req.walletId, jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, WalletResponse.class);}
             );
         return resp;
@@ -173,7 +173,7 @@ public class EpicGateway {
     public CompletableFuture<CustomerResponse> editCustomer(EditCustomerRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<CustomerResponse> resp = 
-            http.postAsyncHttpBasicAuth("EditCustomer/" + req.customerId, jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("editcustomer/" + req.customerId, jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, CustomerResponse.class);}
             );
         return resp;
@@ -188,7 +188,7 @@ public class EpicGateway {
     public CompletableFuture<PaymentResponse> getTransaction(GetTransactionRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<PaymentResponse> resp = 
-            http.postAsyncHttpBasicAuth("GetTransaction/" + req.id, jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("gettransaction/" + req.id, jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, PaymentResponse.class);}
             );
         return resp;
@@ -201,7 +201,7 @@ public class EpicGateway {
     public CompletableFuture<SubscriptionResponse> addSubscription(AddSubscriptionRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<SubscriptionResponse> resp = 
-            http.postAsyncHttpBasicAuth("AddSubscription", jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("addsubscription", jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, SubscriptionResponse.class);}
             );
         return resp;
@@ -215,7 +215,7 @@ public class EpicGateway {
     public CompletableFuture<SubscriptionResponse> editSubscription(EditSubscriptionRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<SubscriptionResponse> resp = 
-            http.postAsyncHttpBasicAuth("EditSubscription/" + req.subscriptionId, jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("editsubscription/" + req.subscriptionId, jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, SubscriptionResponse.class);}
             );
         return resp;
@@ -226,7 +226,7 @@ public class EpicGateway {
     public CompletableFuture<SubscriptionResponse> deleteSubscription(DeleteSubscriptionRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<SubscriptionResponse> resp = 
-            http.postAsyncHttpBasicAuth("DeleteSubscription/" + req.subscriptionId, jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("deletesubscription/" + req.subscriptionId, jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, SubscriptionResponse.class);}
             );
         return resp;
@@ -234,7 +234,7 @@ public class EpicGateway {
     public CompletableFuture<SuspendSubscriptionResponse> suspendSubscription(SuspendSubscriptionRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<SuspendSubscriptionResponse> resp = 
-            http.postAsyncHttpBasicAuth("Subscription/Suspend/" + req.subscriptionId, jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("subscription/suspend/" + req.subscriptionId, jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, SuspendSubscriptionResponse.class);}
             );
         return resp;
@@ -242,7 +242,7 @@ public class EpicGateway {
     public CompletableFuture<SuspendSubscriptionResponse> unsuspendSubscription(UnsuspendSubscriptionRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<SuspendSubscriptionResponse> resp = 
-            http.postAsyncHttpBasicAuth("Subscription/Unsuspend/" + req.subscriptionId, jsonRequest).thenApply(
+            http.postAsyncHttpBasicAuth("subscription/unsuspend/" + req.subscriptionId, jsonRequest).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, SuspendSubscriptionResponse.class);}
             );
         return resp;
@@ -253,7 +253,7 @@ public class EpicGateway {
     protected CompletableFuture<TokenResponse> registerOneTimeToken(String jwt, OneTimeTokenRequest req) {
         String jsonRequest = gson.toJson(req);
         CompletableFuture<TokenResponse> resp = 
-            http.postAsyncHttpBearerAuth("RegisterOneTimeToken", jsonRequest, jwt).thenApply(
+            http.postAsyncHttpBearerAuth("registeronetimetoken", jsonRequest, jwt).thenApply(
                 (strResp) -> {return gson.fromJson(strResp, TokenResponse.class);}
             );
         return resp;
