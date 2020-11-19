@@ -55,7 +55,7 @@ class HttpClient {
                     }
                     conn.setDoOutput(false);
                     conn.setRequestMethod("GET");
-                    conn.setRequestProperty("User-Agent", "TestRest 2000");
+                    conn.setRequestProperty("User-Agent", "EpicPay Java SDK 1.0");
 
                     BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                     StringBuffer buf = new StringBuffer();

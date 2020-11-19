@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 public class AuthorizationRequest {
 
     @SerializedName("transaction_type")
-    public final String transactionType = "Authorize";
+    public final String transactionType = "authorize";
 
     @SerializedName("method")
     public String method;
