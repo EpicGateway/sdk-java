@@ -1,9 +1,9 @@
-# EpicPay Java SDK
+# EpicPay Gateway Java SDK
 
 ## Introduction
 
-The EpicPay Java SDK is built as a quick-and-easy way for your Java project to
-begin interacting with the EpicPay Payments API. 
+The EpicPay Gateway Java SDK is built as a quick-and-easy way for your Java project to
+begin interacting with the EpicPay Gateway Payments API. 
 
 The SDK was built to target Java 8, and needs support for `Lambda` and `CompletableFuture`.
 If you need support for a version of Java without CompletableFutures such as
@@ -16,7 +16,7 @@ Before starting with the SDK, you will need to create an API key online using th
 Gateway Virtual Terminal][1]. For up-to-date documentation on this process, please refer to the
 [EpicPay Gateway Payment API Docs][2].
 
-[1]: https://secure.epicpay.com
+[1]: https://secure.epicpay.com/merchant/
 [2]: https://developer.epicpay.com/Docs/PaymentAPI#Api_Intro
 
 ## Adding the SDK your project
@@ -63,7 +63,7 @@ import com.epicpay.epic_gateway_sdk.EpicGateway;
 ```
 
 The EpicGateway object you instantiate will be the basis for all of the SDK's
-communication with the EpicPay API.
+communication with the EpicPay Gateway Payment API.
 
 From here, the SDK will handle HTTP communication and authentication with the API.
 For detailed information on all of the operations you can perform, check the
@@ -73,15 +73,15 @@ For detailed information on all of the operations you can perform, check the
 
 ### Differences to API
 
-As a general rule of thumb, most methods and models closely mirror those used by the EpicPay API. However, there are a few subtle differences:
+As a general rule of thumb, most methods and models closely mirror those used by the EpicPay Gateway API. However, there are a few subtle differences:
 - The `transactionType` field does not need to be set manually on any transactions.
 - `billingAddress` and `customerAddress` fields are both represented by the same `Address` type.
 
 ### General Design Pattern
 Each of the public methods exposed by your instance of the `EpicGateway` object
-corresponds to one of the possible requests you could make to the EpicPay API.
+corresponds to one of the possible requests you could make to the Payment API.
 Each method should have a javadoc comment with a link to its corresponding section
-in the EpicPay API documentation, which you'll want to reference when crafting
+in the Payment API documentation, which you'll want to reference when crafting
 your requests for the first time.
 
 All API requests, responses, and their sub-objects are modeled by classes in the
@@ -109,7 +109,7 @@ new SaleRequest().method("credit_card").creditCard(
 Parameters are public members, and can be set manually as well if you wish.
 
 ### Asynchronous Responses
-The EpicPay SDK automatically handles threading of API requests for you, and maintains
+The EpicPay Gateway SDK automatically handles threading of API requests for you, and maintains
 its own `CachedThreadPool` to avoid clogging the public `ForkJoinPool`. All requests
 to the SDK return `CompletableFuture`s as a result. (If you're unfamiliar with
 `CompletableFuture`s, they can be used analogously to Javascript `Promise`s.) If you 
@@ -144,7 +144,7 @@ https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture
 
 ### Error Handling
 
-In its current version, the EpicPay SDK only throws exceptions for network-related errors,
+In its current version, the EpicPay Gateway SDK only throws exceptions for network-related errors,
 and does not throw exceptions for errors returned by the API. Instead, you are expected
 to check for errors returned by the API by checking the data of the response's returned
 `Status` object. 
